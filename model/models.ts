@@ -90,6 +90,7 @@ export * from './franchisereferalincomeCreateObjectV1Response';
 export * from './franchisereferalincomeCreateObjectV1ResponseMPayload';
 export * from './franchisereferalincomeRequest';
 export * from './franchisereferalincomeRequestCompound';
+export * from './globalCustomerGetEndpointV1Response';
 export * from './multilingualApikeyDescription';
 export * from './phoneRequest';
 export * from './userCreateEzsignuserV1Request';
@@ -209,6 +210,7 @@ import { FranchisereferalincomeCreateObjectV1Response } from './franchisereferal
 import { FranchisereferalincomeCreateObjectV1ResponseMPayload } from './franchisereferalincomeCreateObjectV1ResponseMPayload';
 import { FranchisereferalincomeRequest } from './franchisereferalincomeRequest';
 import { FranchisereferalincomeRequestCompound } from './franchisereferalincomeRequestCompound';
+import { GlobalCustomerGetEndpointV1Response } from './globalCustomerGetEndpointV1Response';
 import { MultilingualApikeyDescription } from './multilingualApikeyDescription';
 import { PhoneRequest } from './phoneRequest';
 import { UserCreateEzsignuserV1Request } from './userCreateEzsignuserV1Request';
@@ -343,6 +345,7 @@ let typeMap: {[index: string]: any} = {
     "FranchisereferalincomeCreateObjectV1ResponseMPayload": FranchisereferalincomeCreateObjectV1ResponseMPayload,
     "FranchisereferalincomeRequest": FranchisereferalincomeRequest,
     "FranchisereferalincomeRequestCompound": FranchisereferalincomeRequestCompound,
+    "GlobalCustomerGetEndpointV1Response": GlobalCustomerGetEndpointV1Response,
     "MultilingualApikeyDescription": MultilingualApikeyDescription,
     "PhoneRequest": PhoneRequest,
     "UserCreateEzsignuserV1Request": UserCreateEzsignuserV1Request,

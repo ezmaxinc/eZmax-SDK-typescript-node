@@ -13,25 +13,25 @@
 import { RequestFile } from './models';
 
 /**
-* Payload for the /1/object/ezsignfoldersignerassociation/getInPersonLoginUrl API Request
+* Response for the /1/customer/{pksCustomerCode}/endpoint API Request
 */
-export class EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload {
+export class GlobalCustomerGetEndpointV1Response {
     /**
-    * The Url to login to the signing application.    Url will expire after 30 minutes.  
+    * The endpoint\'s URL
     */
-    'sLoginUrl': string;
+    'sEndpointURL': string;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
-            "name": "sLoginUrl",
-            "baseName": "sLoginUrl",
+            "name": "sEndpointURL",
+            "baseName": "sEndpointURL",
             "type": "string"
         }    ];
 
     static getAttributeTypeMap() {
-        return EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload.attributeTypeMap;
+        return GlobalCustomerGetEndpointV1Response.attributeTypeMap;
     }
 }
 

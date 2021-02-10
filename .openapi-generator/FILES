@@ -2,6 +2,7 @@
 .openapi-generator-ignore
 api.ts
 api/apis.ts
+api/globalCustomerApi.ts
 api/moduleUserApi.ts
 api/objectActivesessionApi.ts
 api/objectApikeyApi.ts
@@ -104,6 +105,7 @@ model/franchisereferalincomeCreateObjectV1Response.ts
 model/franchisereferalincomeCreateObjectV1ResponseMPayload.ts
 model/franchisereferalincomeRequest.ts
 model/franchisereferalincomeRequestCompound.ts
+model/globalCustomerGetEndpointV1Response.ts
 model/models.ts
 model/multilingualApikeyDescription.ts
 model/phoneRequest.ts
