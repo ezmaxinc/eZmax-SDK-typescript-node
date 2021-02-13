@@ -3,6 +3,7 @@
 api.ts
 api/apis.ts
 api/globalCustomerApi.ts
+api/moduleSsprApi.ts
 api/moduleUserApi.ts
 api/objectActivesessionApi.ts
 api/objectApikeyApi.ts
