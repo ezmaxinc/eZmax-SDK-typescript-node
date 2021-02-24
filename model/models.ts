@@ -31,8 +31,6 @@ export * from './ezsigndocumentCreateObjectV1Request';
 export * from './ezsigndocumentCreateObjectV1Response';
 export * from './ezsigndocumentCreateObjectV1ResponseMPayload';
 export * from './ezsigndocumentDeleteObjectV1Response';
-export * from './ezsigndocumentEditObjectV1Request';
-export * from './ezsigndocumentEditObjectV1Response';
 export * from './ezsigndocumentGetDownloadUrlV1Response';
 export * from './ezsigndocumentGetDownloadUrlV1ResponseMPayload';
 export * from './ezsigndocumentGetObjectV1Response';
@@ -46,8 +44,6 @@ export * from './ezsignfolderCreateObjectV1Request';
 export * from './ezsignfolderCreateObjectV1Response';
 export * from './ezsignfolderCreateObjectV1ResponseMPayload';
 export * from './ezsignfolderDeleteObjectV1Response';
-export * from './ezsignfolderEditObjectV1Request';
-export * from './ezsignfolderEditObjectV1Response';
 export * from './ezsignfolderGetObjectV1Response';
 export * from './ezsignfolderGetObjectV1ResponseMPayload';
 export * from './ezsignfolderRequest';
@@ -61,8 +57,6 @@ export * from './ezsignfoldersignerassociationCreateObjectV1Request';
 export * from './ezsignfoldersignerassociationCreateObjectV1Response';
 export * from './ezsignfoldersignerassociationCreateObjectV1ResponseMPayload';
 export * from './ezsignfoldersignerassociationDeleteObjectV1Response';
-export * from './ezsignfoldersignerassociationEditObjectV1Request';
-export * from './ezsignfoldersignerassociationEditObjectV1Response';
 export * from './ezsignfoldersignerassociationGetInPersonLoginUrlV1Response';
 export * from './ezsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload';
 export * from './ezsignfoldersignerassociationGetObjectV1Response';
@@ -72,8 +66,6 @@ export * from './ezsignsignatureCreateObjectV1Request';
 export * from './ezsignsignatureCreateObjectV1Response';
 export * from './ezsignsignatureCreateObjectV1ResponseMPayload';
 export * from './ezsignsignatureDeleteObjectV1Response';
-export * from './ezsignsignatureEditObjectV1Request';
-export * from './ezsignsignatureEditObjectV1Response';
 export * from './ezsignsignatureGetObjectV1Response';
 export * from './ezsignsignatureRequest';
 export * from './ezsignsignatureRequestCompound';
@@ -93,6 +85,14 @@ export * from './franchisereferalincomeRequestCompound';
 export * from './globalCustomerGetEndpointV1Response';
 export * from './multilingualApikeyDescription';
 export * from './phoneRequest';
+export * from './uNUSEDEzsigndocumentEditObjectV1Request';
+export * from './uNUSEDEzsigndocumentEditObjectV1Response';
+export * from './uNUSEDEzsignfolderEditObjectV1Request';
+export * from './uNUSEDEzsignfolderEditObjectV1Response';
+export * from './uNUSEDEzsignfoldersignerassociationEditObjectV1Request';
+export * from './uNUSEDEzsignfoldersignerassociationEditObjectV1Response';
+export * from './uNUSEDEzsignsignatureEditObjectV1Request';
+export * from './uNUSEDEzsignsignatureEditObjectV1Response';
 export * from './userCreateEzsignuserV1Request';
 export * from './userCreateEzsignuserV1Response';
 export * from './userCreateEzsignuserV1ResponseMPayload';
@@ -151,8 +151,6 @@ import { EzsigndocumentCreateObjectV1Request } from './ezsigndocumentCreateObjec
 import { EzsigndocumentCreateObjectV1Response } from './ezsigndocumentCreateObjectV1Response';
 import { EzsigndocumentCreateObjectV1ResponseMPayload } from './ezsigndocumentCreateObjectV1ResponseMPayload';
 import { EzsigndocumentDeleteObjectV1Response } from './ezsigndocumentDeleteObjectV1Response';
-import { EzsigndocumentEditObjectV1Request } from './ezsigndocumentEditObjectV1Request';
-import { EzsigndocumentEditObjectV1Response } from './ezsigndocumentEditObjectV1Response';
 import { EzsigndocumentGetDownloadUrlV1Response } from './ezsigndocumentGetDownloadUrlV1Response';
 import { EzsigndocumentGetDownloadUrlV1ResponseMPayload } from './ezsigndocumentGetDownloadUrlV1ResponseMPayload';
 import { EzsigndocumentGetObjectV1Response } from './ezsigndocumentGetObjectV1Response';
@@ -166,8 +164,6 @@ import { EzsignfolderCreateObjectV1Request } from './ezsignfolderCreateObjectV1R
 import { EzsignfolderCreateObjectV1Response } from './ezsignfolderCreateObjectV1Response';
 import { EzsignfolderCreateObjectV1ResponseMPayload } from './ezsignfolderCreateObjectV1ResponseMPayload';
 import { EzsignfolderDeleteObjectV1Response } from './ezsignfolderDeleteObjectV1Response';
-import { EzsignfolderEditObjectV1Request } from './ezsignfolderEditObjectV1Request';
-import { EzsignfolderEditObjectV1Response } from './ezsignfolderEditObjectV1Response';
 import { EzsignfolderGetObjectV1Response } from './ezsignfolderGetObjectV1Response';
 import { EzsignfolderGetObjectV1ResponseMPayload } from './ezsignfolderGetObjectV1ResponseMPayload';
 import { EzsignfolderRequest } from './ezsignfolderRequest';
@@ -181,8 +177,6 @@ import { EzsignfoldersignerassociationCreateObjectV1Request } from './ezsignfold
 import { EzsignfoldersignerassociationCreateObjectV1Response } from './ezsignfoldersignerassociationCreateObjectV1Response';
 import { EzsignfoldersignerassociationCreateObjectV1ResponseMPayload } from './ezsignfoldersignerassociationCreateObjectV1ResponseMPayload';
 import { EzsignfoldersignerassociationDeleteObjectV1Response } from './ezsignfoldersignerassociationDeleteObjectV1Response';
-import { EzsignfoldersignerassociationEditObjectV1Request } from './ezsignfoldersignerassociationEditObjectV1Request';
-import { EzsignfoldersignerassociationEditObjectV1Response } from './ezsignfoldersignerassociationEditObjectV1Response';
 import { EzsignfoldersignerassociationGetInPersonLoginUrlV1Response } from './ezsignfoldersignerassociationGetInPersonLoginUrlV1Response';
 import { EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload } from './ezsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload';
 import { EzsignfoldersignerassociationGetObjectV1Response } from './ezsignfoldersignerassociationGetObjectV1Response';
@@ -192,8 +186,6 @@ import { EzsignsignatureCreateObjectV1Request } from './ezsignsignatureCreateObj
 import { EzsignsignatureCreateObjectV1Response } from './ezsignsignatureCreateObjectV1Response';
 import { EzsignsignatureCreateObjectV1ResponseMPayload } from './ezsignsignatureCreateObjectV1ResponseMPayload';
 import { EzsignsignatureDeleteObjectV1Response } from './ezsignsignatureDeleteObjectV1Response';
-import { EzsignsignatureEditObjectV1Request } from './ezsignsignatureEditObjectV1Request';
-import { EzsignsignatureEditObjectV1Response } from './ezsignsignatureEditObjectV1Response';
 import { EzsignsignatureGetObjectV1Response } from './ezsignsignatureGetObjectV1Response';
 import { EzsignsignatureRequest } from './ezsignsignatureRequest';
 import { EzsignsignatureRequestCompound } from './ezsignsignatureRequestCompound';
@@ -213,6 +205,14 @@ import { FranchisereferalincomeRequestCompound } from './franchisereferalincomeR
 import { GlobalCustomerGetEndpointV1Response } from './globalCustomerGetEndpointV1Response';
 import { MultilingualApikeyDescription } from './multilingualApikeyDescription';
 import { PhoneRequest } from './phoneRequest';
+import { UNUSEDEzsigndocumentEditObjectV1Request } from './uNUSEDEzsigndocumentEditObjectV1Request';
+import { UNUSEDEzsigndocumentEditObjectV1Response } from './uNUSEDEzsigndocumentEditObjectV1Response';
+import { UNUSEDEzsignfolderEditObjectV1Request } from './uNUSEDEzsignfolderEditObjectV1Request';
+import { UNUSEDEzsignfolderEditObjectV1Response } from './uNUSEDEzsignfolderEditObjectV1Response';
+import { UNUSEDEzsignfoldersignerassociationEditObjectV1Request } from './uNUSEDEzsignfoldersignerassociationEditObjectV1Request';
+import { UNUSEDEzsignfoldersignerassociationEditObjectV1Response } from './uNUSEDEzsignfoldersignerassociationEditObjectV1Response';
+import { UNUSEDEzsignsignatureEditObjectV1Request } from './uNUSEDEzsignsignatureEditObjectV1Request';
+import { UNUSEDEzsignsignatureEditObjectV1Response } from './uNUSEDEzsignsignatureEditObjectV1Response';
 import { UserCreateEzsignuserV1Request } from './userCreateEzsignuserV1Request';
 import { UserCreateEzsignuserV1Response } from './userCreateEzsignuserV1Response';
 import { UserCreateEzsignuserV1ResponseMPayload } from './userCreateEzsignuserV1ResponseMPayload';
@@ -291,8 +291,6 @@ let typeMap: {[index: string]: any} = {
     "EzsigndocumentCreateObjectV1Response": EzsigndocumentCreateObjectV1Response,
     "EzsigndocumentCreateObjectV1ResponseMPayload": EzsigndocumentCreateObjectV1ResponseMPayload,
     "EzsigndocumentDeleteObjectV1Response": EzsigndocumentDeleteObjectV1Response,
-    "EzsigndocumentEditObjectV1Request": EzsigndocumentEditObjectV1Request,
-    "EzsigndocumentEditObjectV1Response": EzsigndocumentEditObjectV1Response,
     "EzsigndocumentGetDownloadUrlV1Response": EzsigndocumentGetDownloadUrlV1Response,
     "EzsigndocumentGetDownloadUrlV1ResponseMPayload": EzsigndocumentGetDownloadUrlV1ResponseMPayload,
     "EzsigndocumentGetObjectV1Response": EzsigndocumentGetObjectV1Response,
@@ -306,8 +304,6 @@ let typeMap: {[index: string]: any} = {
     "EzsignfolderCreateObjectV1Response": EzsignfolderCreateObjectV1Response,
     "EzsignfolderCreateObjectV1ResponseMPayload": EzsignfolderCreateObjectV1ResponseMPayload,
     "EzsignfolderDeleteObjectV1Response": EzsignfolderDeleteObjectV1Response,
-    "EzsignfolderEditObjectV1Request": EzsignfolderEditObjectV1Request,
-    "EzsignfolderEditObjectV1Response": EzsignfolderEditObjectV1Response,
     "EzsignfolderGetObjectV1Response": EzsignfolderGetObjectV1Response,
     "EzsignfolderGetObjectV1ResponseMPayload": EzsignfolderGetObjectV1ResponseMPayload,
     "EzsignfolderRequest": EzsignfolderRequest,
@@ -321,8 +317,6 @@ let typeMap: {[index: string]: any} = {
     "EzsignfoldersignerassociationCreateObjectV1Response": EzsignfoldersignerassociationCreateObjectV1Response,
     "EzsignfoldersignerassociationCreateObjectV1ResponseMPayload": EzsignfoldersignerassociationCreateObjectV1ResponseMPayload,
     "EzsignfoldersignerassociationDeleteObjectV1Response": EzsignfoldersignerassociationDeleteObjectV1Response,
-    "EzsignfoldersignerassociationEditObjectV1Request": EzsignfoldersignerassociationEditObjectV1Request,
-    "EzsignfoldersignerassociationEditObjectV1Response": EzsignfoldersignerassociationEditObjectV1Response,
     "EzsignfoldersignerassociationGetInPersonLoginUrlV1Response": EzsignfoldersignerassociationGetInPersonLoginUrlV1Response,
     "EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload": EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload,
     "EzsignfoldersignerassociationGetObjectV1Response": EzsignfoldersignerassociationGetObjectV1Response,
@@ -332,8 +326,6 @@ let typeMap: {[index: string]: any} = {
     "EzsignsignatureCreateObjectV1Response": EzsignsignatureCreateObjectV1Response,
     "EzsignsignatureCreateObjectV1ResponseMPayload": EzsignsignatureCreateObjectV1ResponseMPayload,
     "EzsignsignatureDeleteObjectV1Response": EzsignsignatureDeleteObjectV1Response,
-    "EzsignsignatureEditObjectV1Request": EzsignsignatureEditObjectV1Request,
-    "EzsignsignatureEditObjectV1Response": EzsignsignatureEditObjectV1Response,
     "EzsignsignatureGetObjectV1Response": EzsignsignatureGetObjectV1Response,
     "EzsignsignatureRequest": EzsignsignatureRequest,
     "EzsignsignatureRequestCompound": EzsignsignatureRequestCompound,
@@ -348,6 +340,14 @@ let typeMap: {[index: string]: any} = {
     "GlobalCustomerGetEndpointV1Response": GlobalCustomerGetEndpointV1Response,
     "MultilingualApikeyDescription": MultilingualApikeyDescription,
     "PhoneRequest": PhoneRequest,
+    "UNUSEDEzsigndocumentEditObjectV1Request": UNUSEDEzsigndocumentEditObjectV1Request,
+    "UNUSEDEzsigndocumentEditObjectV1Response": UNUSEDEzsigndocumentEditObjectV1Response,
+    "UNUSEDEzsignfolderEditObjectV1Request": UNUSEDEzsignfolderEditObjectV1Request,
+    "UNUSEDEzsignfolderEditObjectV1Response": UNUSEDEzsignfolderEditObjectV1Response,
+    "UNUSEDEzsignfoldersignerassociationEditObjectV1Request": UNUSEDEzsignfoldersignerassociationEditObjectV1Request,
+    "UNUSEDEzsignfoldersignerassociationEditObjectV1Response": UNUSEDEzsignfoldersignerassociationEditObjectV1Response,
+    "UNUSEDEzsignsignatureEditObjectV1Request": UNUSEDEzsignsignatureEditObjectV1Request,
+    "UNUSEDEzsignsignatureEditObjectV1Response": UNUSEDEzsignsignatureEditObjectV1Response,
     "UserCreateEzsignuserV1Request": UserCreateEzsignuserV1Request,
     "UserCreateEzsignuserV1Response": UserCreateEzsignuserV1Response,
     "UserCreateEzsignuserV1ResponseMPayload": UserCreateEzsignuserV1ResponseMPayload,
