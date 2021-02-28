@@ -16,6 +16,11 @@ import http from 'http';
 
 /* tslint:disable:no-unused-locals */
 import { CommonResponseError } from '../model/commonResponseError';
+import { SsprResetPasswordRequestV1Request } from '../model/ssprResetPasswordRequestV1Request';
+import { SsprResetPasswordV1Request } from '../model/ssprResetPasswordV1Request';
+import { SsprSendUsernamesV1Request } from '../model/ssprSendUsernamesV1Request';
+import { SsprUnlockAccountRequestV1Request } from '../model/ssprUnlockAccountRequestV1Request';
+import { SsprUnlockAccountV1Request } from '../model/ssprUnlockAccountV1Request';
 
 import { ObjectSerializer, Authentication, VoidAuth, Interceptor } from '../model/models';
 import { HttpBasicAuth, HttpBearerAuth, ApiKeyAuth, OAuth } from '../model/models';
@@ -90,11 +95,12 @@ export class ModuleSsprApi {
     }
 
     /**
-     * This endpoint returns an email with the username(s) matching the email address provided in case of forgotten username
-     * @summary Remind of forgotten username(s)
+     * This endpoint sends an email with a link to reset the user\'s password.  sEmailAddress must be set if eUserTypeSSPR = EzsignUser  sUserLoginname must be set if eUserTypeSSPR = Native
+     * @summary Reset Password Request
+     * @param ssprResetPasswordRequestV1Request 
      */
-    public async ssprRemindUsernamesV1 (options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body?: any;  }> {
-        const localVarPath = this.basePath + '/1/module/sspr/remindUsernames';
+    public async ssprResetPasswordRequestV1 (ssprResetPasswordRequestV1Request: SsprResetPasswordRequestV1Request, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body?: any;  }> {
+        const localVarPath = this.basePath + '/1/module/sspr/resetPasswordRequest/';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['application/json'];
@@ -105,6 +111,11 @@ export class ModuleSsprApi {
             localVarHeaderParams.Accept = produces.join(',');
         }
         let localVarFormParams: any = {};
+
+        // verify required parameter 'ssprResetPasswordRequestV1Request' is not null or undefined
+        if (ssprResetPasswordRequestV1Request === null || ssprResetPasswordRequestV1Request === undefined) {
+            throw new Error('Required parameter ssprResetPasswordRequestV1Request was null or undefined when calling ssprResetPasswordRequestV1.');
+        }
 
         (<any>Object).assign(localVarHeaderParams, options.headers);
 
@@ -117,6 +128,291 @@ export class ModuleSsprApi {
             uri: localVarPath,
             useQuerystring: this._useQuerystring,
             json: true,
+            body: ObjectSerializer.serialize(ssprResetPasswordRequestV1Request, "SsprResetPasswordRequestV1Request")
+        };
+
+        let authenticationPromise = Promise.resolve();
+        if (this.authentications.Authorization.apiKey) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.Authorization.applyToRequest(localVarRequestOptions));
+        }
+        authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
+
+        let interceptorPromise = authenticationPromise;
+        for (const interceptor of this.interceptors) {
+            interceptorPromise = interceptorPromise.then(() => interceptor(localVarRequestOptions));
+        }
+
+        return interceptorPromise.then(() => {
+            if (Object.keys(localVarFormParams).length) {
+                if (localVarUseFormData) {
+                    (<any>localVarRequestOptions).formData = localVarFormParams;
+                } else {
+                    localVarRequestOptions.form = localVarFormParams;
+                }
+            }
+            return new Promise<{ response: http.IncomingMessage; body?: any;  }>((resolve, reject) => {
+                localVarRequest(localVarRequestOptions, (error, response, body) => {
+                    if (error) {
+                        reject(error);
+                    } else {
+                        if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
+                            resolve({ response: response, body: body });
+                        } else {
+                            reject(new HttpError(response, body, response.statusCode));
+                        }
+                    }
+                });
+            });
+        });
+    }
+    /**
+     * This endpoint resets the user\'s password.  sEmailAddress must be set if eUserTypeSSPR = EzsignUser  sUserLoginname must be set if eUserTypeSSPR = Native
+     * @summary Reset Password
+     * @param ssprResetPasswordV1Request 
+     */
+    public async ssprResetPasswordV1 (ssprResetPasswordV1Request: SsprResetPasswordV1Request, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body?: any;  }> {
+        const localVarPath = this.basePath + '/1/module/sspr/resetPassword';
+        let localVarQueryParameters: any = {};
+        let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
+        const produces = ['application/json'];
+        // give precedence to 'application/json'
+        if (produces.indexOf('application/json') >= 0) {
+            localVarHeaderParams.Accept = 'application/json';
+        } else {
+            localVarHeaderParams.Accept = produces.join(',');
+        }
+        let localVarFormParams: any = {};
+
+        // verify required parameter 'ssprResetPasswordV1Request' is not null or undefined
+        if (ssprResetPasswordV1Request === null || ssprResetPasswordV1Request === undefined) {
+            throw new Error('Required parameter ssprResetPasswordV1Request was null or undefined when calling ssprResetPasswordV1.');
+        }
+
+        (<any>Object).assign(localVarHeaderParams, options.headers);
+
+        let localVarUseFormData = false;
+
+        let localVarRequestOptions: localVarRequest.Options = {
+            method: 'POST',
+            qs: localVarQueryParameters,
+            headers: localVarHeaderParams,
+            uri: localVarPath,
+            useQuerystring: this._useQuerystring,
+            json: true,
+            body: ObjectSerializer.serialize(ssprResetPasswordV1Request, "SsprResetPasswordV1Request")
+        };
+
+        let authenticationPromise = Promise.resolve();
+        if (this.authentications.Authorization.apiKey) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.Authorization.applyToRequest(localVarRequestOptions));
+        }
+        authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
+
+        let interceptorPromise = authenticationPromise;
+        for (const interceptor of this.interceptors) {
+            interceptorPromise = interceptorPromise.then(() => interceptor(localVarRequestOptions));
+        }
+
+        return interceptorPromise.then(() => {
+            if (Object.keys(localVarFormParams).length) {
+                if (localVarUseFormData) {
+                    (<any>localVarRequestOptions).formData = localVarFormParams;
+                } else {
+                    localVarRequestOptions.form = localVarFormParams;
+                }
+            }
+            return new Promise<{ response: http.IncomingMessage; body?: any;  }>((resolve, reject) => {
+                localVarRequest(localVarRequestOptions, (error, response, body) => {
+                    if (error) {
+                        reject(error);
+                    } else {
+                        if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
+                            resolve({ response: response, body: body });
+                        } else {
+                            reject(new HttpError(response, body, response.statusCode));
+                        }
+                    }
+                });
+            });
+        });
+    }
+    /**
+     * This endpoint returns an email with the username(s) matching the email address provided in case of forgotten username
+     * @summary Send username(s)
+     * @param ssprSendUsernamesV1Request 
+     */
+    public async ssprSendUsernamesV1 (ssprSendUsernamesV1Request: SsprSendUsernamesV1Request, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body?: any;  }> {
+        const localVarPath = this.basePath + '/1/module/sspr/sendUsernames';
+        let localVarQueryParameters: any = {};
+        let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
+        const produces = ['application/json'];
+        // give precedence to 'application/json'
+        if (produces.indexOf('application/json') >= 0) {
+            localVarHeaderParams.Accept = 'application/json';
+        } else {
+            localVarHeaderParams.Accept = produces.join(',');
+        }
+        let localVarFormParams: any = {};
+
+        // verify required parameter 'ssprSendUsernamesV1Request' is not null or undefined
+        if (ssprSendUsernamesV1Request === null || ssprSendUsernamesV1Request === undefined) {
+            throw new Error('Required parameter ssprSendUsernamesV1Request was null or undefined when calling ssprSendUsernamesV1.');
+        }
+
+        (<any>Object).assign(localVarHeaderParams, options.headers);
+
+        let localVarUseFormData = false;
+
+        let localVarRequestOptions: localVarRequest.Options = {
+            method: 'POST',
+            qs: localVarQueryParameters,
+            headers: localVarHeaderParams,
+            uri: localVarPath,
+            useQuerystring: this._useQuerystring,
+            json: true,
+            body: ObjectSerializer.serialize(ssprSendUsernamesV1Request, "SsprSendUsernamesV1Request")
+        };
+
+        let authenticationPromise = Promise.resolve();
+        if (this.authentications.Authorization.apiKey) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.Authorization.applyToRequest(localVarRequestOptions));
+        }
+        authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
+
+        let interceptorPromise = authenticationPromise;
+        for (const interceptor of this.interceptors) {
+            interceptorPromise = interceptorPromise.then(() => interceptor(localVarRequestOptions));
+        }
+
+        return interceptorPromise.then(() => {
+            if (Object.keys(localVarFormParams).length) {
+                if (localVarUseFormData) {
+                    (<any>localVarRequestOptions).formData = localVarFormParams;
+                } else {
+                    localVarRequestOptions.form = localVarFormParams;
+                }
+            }
+            return new Promise<{ response: http.IncomingMessage; body?: any;  }>((resolve, reject) => {
+                localVarRequest(localVarRequestOptions, (error, response, body) => {
+                    if (error) {
+                        reject(error);
+                    } else {
+                        if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
+                            resolve({ response: response, body: body });
+                        } else {
+                            reject(new HttpError(response, body, response.statusCode));
+                        }
+                    }
+                });
+            });
+        });
+    }
+    /**
+     * This endpoint sends an email with a link to unlock the user account.  sEmailAddress must be set if eUserTypeSSPR = EzsignUser  sUserLoginname must be set if eUserTypeSSPR = Native
+     * @summary Unlock Account Request
+     * @param ssprUnlockAccountRequestV1Request 
+     */
+    public async ssprUnlockAccountRequestV1 (ssprUnlockAccountRequestV1Request: SsprUnlockAccountRequestV1Request, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body?: any;  }> {
+        const localVarPath = this.basePath + '/1/module/sspr/unlockAccountRequest';
+        let localVarQueryParameters: any = {};
+        let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
+        const produces = ['application/json'];
+        // give precedence to 'application/json'
+        if (produces.indexOf('application/json') >= 0) {
+            localVarHeaderParams.Accept = 'application/json';
+        } else {
+            localVarHeaderParams.Accept = produces.join(',');
+        }
+        let localVarFormParams: any = {};
+
+        // verify required parameter 'ssprUnlockAccountRequestV1Request' is not null or undefined
+        if (ssprUnlockAccountRequestV1Request === null || ssprUnlockAccountRequestV1Request === undefined) {
+            throw new Error('Required parameter ssprUnlockAccountRequestV1Request was null or undefined when calling ssprUnlockAccountRequestV1.');
+        }
+
+        (<any>Object).assign(localVarHeaderParams, options.headers);
+
+        let localVarUseFormData = false;
+
+        let localVarRequestOptions: localVarRequest.Options = {
+            method: 'POST',
+            qs: localVarQueryParameters,
+            headers: localVarHeaderParams,
+            uri: localVarPath,
+            useQuerystring: this._useQuerystring,
+            json: true,
+            body: ObjectSerializer.serialize(ssprUnlockAccountRequestV1Request, "SsprUnlockAccountRequestV1Request")
+        };
+
+        let authenticationPromise = Promise.resolve();
+        if (this.authentications.Authorization.apiKey) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.Authorization.applyToRequest(localVarRequestOptions));
+        }
+        authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
+
+        let interceptorPromise = authenticationPromise;
+        for (const interceptor of this.interceptors) {
+            interceptorPromise = interceptorPromise.then(() => interceptor(localVarRequestOptions));
+        }
+
+        return interceptorPromise.then(() => {
+            if (Object.keys(localVarFormParams).length) {
+                if (localVarUseFormData) {
+                    (<any>localVarRequestOptions).formData = localVarFormParams;
+                } else {
+                    localVarRequestOptions.form = localVarFormParams;
+                }
+            }
+            return new Promise<{ response: http.IncomingMessage; body?: any;  }>((resolve, reject) => {
+                localVarRequest(localVarRequestOptions, (error, response, body) => {
+                    if (error) {
+                        reject(error);
+                    } else {
+                        if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
+                            resolve({ response: response, body: body });
+                        } else {
+                            reject(new HttpError(response, body, response.statusCode));
+                        }
+                    }
+                });
+            });
+        });
+    }
+    /**
+     * This endpoint unlocks the user account.  sEmailAddress must be set if eUserTypeSSPR = EzsignUser  sUserLoginname must be set if eUserTypeSSPR = Native
+     * @summary Unlock Account
+     * @param ssprUnlockAccountV1Request 
+     */
+    public async ssprUnlockAccountV1 (ssprUnlockAccountV1Request: SsprUnlockAccountV1Request, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body?: any;  }> {
+        const localVarPath = this.basePath + '/1/module/sspr/unlockAccount';
+        let localVarQueryParameters: any = {};
+        let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
+        const produces = ['application/json'];
+        // give precedence to 'application/json'
+        if (produces.indexOf('application/json') >= 0) {
+            localVarHeaderParams.Accept = 'application/json';
+        } else {
+            localVarHeaderParams.Accept = produces.join(',');
+        }
+        let localVarFormParams: any = {};
+
+        // verify required parameter 'ssprUnlockAccountV1Request' is not null or undefined
+        if (ssprUnlockAccountV1Request === null || ssprUnlockAccountV1Request === undefined) {
+            throw new Error('Required parameter ssprUnlockAccountV1Request was null or undefined when calling ssprUnlockAccountV1.');
+        }
+
+        (<any>Object).assign(localVarHeaderParams, options.headers);
+
+        let localVarUseFormData = false;
+
+        let localVarRequestOptions: localVarRequest.Options = {
+            method: 'POST',
+            qs: localVarQueryParameters,
+            headers: localVarHeaderParams,
+            uri: localVarPath,
+            useQuerystring: this._useQuerystring,
+            json: true,
+            body: ObjectSerializer.serialize(ssprUnlockAccountV1Request, "SsprUnlockAccountV1Request")
         };
 
         let authenticationPromise = Promise.resolve();
