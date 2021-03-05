@@ -91,6 +91,7 @@ export * from './ssprResetPasswordV1Request';
 export * from './ssprSendUsernamesV1Request';
 export * from './ssprUnlockAccountRequestV1Request';
 export * from './ssprUnlockAccountV1Request';
+export * from './ssprValidateTokenV1Request';
 export * from './uNUSEDEzsigndocumentEditObjectV1Request';
 export * from './uNUSEDEzsigndocumentEditObjectV1Response';
 export * from './uNUSEDEzsignfolderEditObjectV1Request';
@@ -217,6 +218,7 @@ import { SsprResetPasswordV1Request } from './ssprResetPasswordV1Request';
 import { SsprSendUsernamesV1Request } from './ssprSendUsernamesV1Request';
 import { SsprUnlockAccountRequestV1Request } from './ssprUnlockAccountRequestV1Request';
 import { SsprUnlockAccountV1Request } from './ssprUnlockAccountV1Request';
+import { SsprValidateTokenV1Request } from './ssprValidateTokenV1Request';
 import { UNUSEDEzsigndocumentEditObjectV1Request } from './uNUSEDEzsigndocumentEditObjectV1Request';
 import { UNUSEDEzsigndocumentEditObjectV1Response } from './uNUSEDEzsigndocumentEditObjectV1Response';
 import { UNUSEDEzsignfolderEditObjectV1Request } from './uNUSEDEzsignfolderEditObjectV1Request';
@@ -358,6 +360,7 @@ let typeMap: {[index: string]: any} = {
     "SsprSendUsernamesV1Request": SsprSendUsernamesV1Request,
     "SsprUnlockAccountRequestV1Request": SsprUnlockAccountRequestV1Request,
     "SsprUnlockAccountV1Request": SsprUnlockAccountV1Request,
+    "SsprValidateTokenV1Request": SsprValidateTokenV1Request,
     "UNUSEDEzsigndocumentEditObjectV1Request": UNUSEDEzsigndocumentEditObjectV1Request,
     "UNUSEDEzsigndocumentEditObjectV1Response": UNUSEDEzsigndocumentEditObjectV1Response,
     "UNUSEDEzsignfolderEditObjectV1Request": UNUSEDEzsignfolderEditObjectV1Request,

@@ -1,6 +1,6 @@
 {
     "name": "@ezmaxinc/ezmax-sdk-typescript-node",
-    "version": "1.0.31",
+    "version": "1.0.32",
     "description": "NodeJS client for @ezmaxinc/ezmax-sdk-typescript-node",
     "repository": "ezmaxinc/ezmax-sdk-typescript-node",
     "main": "dist/api.js",
